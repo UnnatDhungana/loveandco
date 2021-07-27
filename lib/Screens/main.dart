@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:rental_application/Screens/Appconstants.dart';
+import 'package:rental_application/Screens/guestHomePage.dart';
 import 'package:rental_application/Screens/loginPage.dart';
 import 'package:rental_application/Screens/signupPage.dart';
 
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       routes: {
         LoginPage.routeName: (context)=> LoginPage(),
         SignupPage.routeName:(context)=> SignupPage(),
+        guestHomePage.routeName:(context)=>guestHomePage(),
       },
     );
   }

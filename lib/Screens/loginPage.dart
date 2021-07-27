@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rental_application/Screens/Appconstants.dart';
+import 'package:rental_application/Screens/guestHomePage.dart';
+
+import 'signupPage.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -14,6 +17,14 @@ _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+  void _signup(){
+    Navigator.pushNamed(context, SignupPage.routeName);
+  }
+
+  void _login(){
+    Navigator.pushNamed(context, guestHomePage.routeName);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,7 +76,9 @@ class _LoginPageState extends State<LoginPage> {
               Padding(
                 padding: const EdgeInsets.only(top: 35.0),
                 child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      _login();
+                      },
                   child:Text(
                     'Login',
                     style: TextStyle(
@@ -86,7 +99,9 @@ class _LoginPageState extends State<LoginPage> {
               Padding(
                 padding: const EdgeInsets.only(top: 20.0),
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    _signup();
+                  },
                   child:Text(
                     'SignUp',
                     style: TextStyle(
