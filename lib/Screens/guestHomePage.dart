@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rental_application/Screens/Appconstants.dart';
-import 'package:rental_application/Screens/Indox.dart';
+import 'package:rental_application/Screens/InboxPage.dart';
 import 'package:rental_application/Screens/Payment.dart';
 import 'package:rental_application/Screens/Profile.dart';
 import 'package:rental_application/Screens/Utility.dart';
