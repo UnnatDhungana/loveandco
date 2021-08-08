@@ -26,7 +26,7 @@ void _signup(){
     return Scaffold(
 
       appBar: AppBar(
-        title: AppBarText(text: 'SignUp Page',)
+        title: AppBarText(text: 'SignUp',)
       ),
 
       body: Center(
