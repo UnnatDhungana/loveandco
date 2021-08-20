@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:rental_application/Screens/Appconstants.dart';
+import 'package:rental_application/Models/Appconstants.dart';
 import 'package:rental_application/Screens/ConversationPage.dart';
 import 'package:rental_application/Screens/PersonalinfoPage.dart';
 import 'package:rental_application/Screens/guestHomePage.dart';

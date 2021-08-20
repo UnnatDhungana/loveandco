@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rental_application/Screens/Appconstants.dart';
+import 'package:rental_application/Models/Appconstants.dart';
 import 'package:rental_application/Screens/ConversationPage.dart';
 import 'package:rental_application/Views/TextWidget.dart';
 import 'package:rental_application/Views/listwidget.dart';

@@ -2,7 +2,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rental_application/Screens/Appconstants.dart';
+import 'package:rental_application/Models/Appconstants.dart';
 import 'package:rental_application/Screens/PersonalinfoPage.dart';
 import 'package:rental_application/Screens/loginPage.dart';
 import 'package:rental_application/Views/TextWidget.dart';
