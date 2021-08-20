@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:rental_application/Screens/Appconstants.dart';
 import 'package:rental_application/Screens/guestHomePage.dart';
 import 'package:rental_application/Views/TextWidget.dart';
+import 'package:rental_application/Views/listwidget.dart';
 
 
 class ViewProfilePage extends StatefulWidget {
@@ -130,8 +131,6 @@ class _ViewProfilePageState extends State<ViewProfilePage> {
                     ),
                   ),
                 ),
-
-
               ],
             ),
           ),

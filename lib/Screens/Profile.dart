@@ -6,6 +6,7 @@ import 'package:rental_application/Screens/Appconstants.dart';
 import 'package:rental_application/Screens/PersonalinfoPage.dart';
 import 'package:rental_application/Screens/loginPage.dart';
 import 'package:rental_application/Views/TextWidget.dart';
+import 'package:rental_application/Views/listwidget.dart';
 
 
 class profilePage extends StatefulWidget {
@@ -85,19 +86,46 @@ class _profilePageState extends State<profilePage> {
                },
                child: ProfilePageListViewItem(text:'Personal Information',iconData: Icons.person_sharp,),
              ),
-             MaterialButton(
-               height: MediaQuery.of(context).size.height/9.0,
-               onPressed: _logout,
-               child: ProfilePageListViewItem(text:'Logout',iconData: Icons.logout,),
-             ),
+
 
            ],
+         ),
+         Padding(
+           padding:const EdgeInsets.only(top: 15.0),
+           child: Text(
+             'Reviews',
+             style: TextStyle(
+               fontWeight: FontWeight.bold,
+               fontSize: 25.0,
+
+             ),
+           ),
+         ),
+         Padding(
+           padding: const EdgeInsets.only(top: 15.0),
+           child: ListView.builder(
+               itemCount: 2,
+               shrinkWrap: true,
+               itemBuilder: (
+                   context,index){
+                 return ReviewListTile();
+               }
+           ),
+
+         ),
+         MaterialButton(
+           height: MediaQuery.of(context).size.height/9.0,
+           onPressed: _logout,
+           child: ProfilePageListViewItem(text:'Logout',iconData: Icons.logout,),
          ),
 
        ],
      ),
 
    );
+
+
+
   }
 
 }
@@ -123,6 +151,8 @@ class ProfilePageListViewItem extends StatelessWidget{
        size: 30.0,
      ),
    );
+
+
   }
 
 }
