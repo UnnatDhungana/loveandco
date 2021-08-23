@@ -19,12 +19,73 @@ class _paymentPageState extends State<paymentPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Payment'),
+    return Padding(
+        padding: const EdgeInsets.fromLTRB(0, 20,0, 0),
+      child: Column(
+       children: <Widget>[
+         Text(
+         'Payment Options',
+      style: TextStyle(
+      fontWeight: FontWeight.bold,
+      fontSize: 25.0,
+    ),
+    ),
+         ListView(
+             shrinkWrap: true,
+             children: <Widget>[
+         Padding(
+           padding: const EdgeInsets.all(8.0),
+           child: MaterialButton(
+           height: MediaQuery.of(context).size.height/10.0,
+      onPressed: (){},
+      child: PaymentPageListViewItem( text: 'Payment Methods',iconData: Icons.payment
+
+      ),
+           ),
+         ),
+    ],
+
+           ),
+         Padding(
+           padding: const EdgeInsets.all(8.0),
+           child: MaterialButton(
+               onPressed: (){},
+               child: PaymentPageListViewItem(text:'Credits and Coupons', iconData: Icons.credit_score,),
+
+               ),
+         )
+    ],
+    ),
     );
   }
 
+}
+class PaymentPageListViewItem extends StatelessWidget{
+  final String text;
+  final IconData iconData;
+  PaymentPageListViewItem({Key key, this.text, this.iconData}): super(key: key);
 
-
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+        contentPadding: EdgeInsets.all(0.0),
+    leading: Text (
+    this.text,
+    style: TextStyle(
+    fontSize: 20.0,
+    fontWeight: FontWeight.normal,
+    ),
+    ),
+    trailing: Icon(
+    this.iconData,
+    size: 30.0,
+    ),
+    );
+  }
 
 }
+
+
+
+
+

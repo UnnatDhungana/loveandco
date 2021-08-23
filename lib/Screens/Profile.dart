@@ -91,7 +91,7 @@ class _profilePageState extends State<profilePage> {
            ],
          ),
          Padding(
-           padding:const EdgeInsets.only(top: 15.0),
+           padding:const EdgeInsets.only(top: 10.0),
            child: Text(
              'Reviews',
              style: TextStyle(
@@ -102,7 +102,7 @@ class _profilePageState extends State<profilePage> {
            ),
          ),
          Padding(
-           padding: const EdgeInsets.only(top: 15.0),
+           padding: const EdgeInsets.only(top: 10.0),
            child: ListView.builder(
                itemCount: 2,
                shrinkWrap: true,

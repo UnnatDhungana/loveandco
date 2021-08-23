@@ -8,6 +8,7 @@ import 'package:rental_application/Screens/guestHomePage.dart';
 import 'package:rental_application/Screens/loginPage.dart';
 import 'package:rental_application/Screens/signupPage.dart';
 import 'package:rental_application/Screens/viewProfilePage.dart';
+import 'package:rental_application/Screens/PaymentMethodPage.dart';
 
 
 void main() {
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         ConversationPage.routeName:(context)=>ConversationPage(),
         PersonalInfoPage.routeName:(context)=>PersonalInfoPage(),
         ViewProfilePage.routeName:(context)=>ViewProfilePage(),
+        //PaymentMethodPage.routeName:(context)=>PaymentMethodPage(),
       },
     );
   }
