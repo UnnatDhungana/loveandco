@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "449387689251",
+    "firebase_url": "https://love-and-co-tenant-application-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "love-and-co-tenant-application",
+    "storage_bucket": "love-and-co-tenant-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449387689251:android:550ee028f8e3e397a80896",
+        "android_client_info": {
+          "package_name": "com.example.rentalApplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449387689251-mmkh6proal3ue1m70koe99g8ig9hn2dc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0o0Wo1dcEr3pgvWk05scuqt5XzOQ4fmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "449387689251-mmkh6proal3ue1m70koe99g8ig9hn2dc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "449387689251-bttlooqhr4iqn26iasqs1m09s91urjtb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.rentalApplication"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
