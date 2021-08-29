@@ -17,9 +17,33 @@ class PersonalInfoPage extends StatefulWidget {
 
 class _PersonalInfoPageState extends State<PersonalInfoPage> {
 
+  TextEditingController _firstNameController;
+  TextEditingController _lastNameController;
+  TextEditingController _residentalAddressController;
+  TextEditingController _emailController;
+  TextEditingController _contactNumberController;
+  TextEditingController _countryController;
+  TextEditingController _dobController;
+
+
   void _saveinfo(){
     Navigator.pushNamed(context, guestHomePage.routeName);
   }
+
+  @override
+  void initState(){
+    _firstNameController = TextEditingController( text: AppConstants.currentUser.firstName);
+    _lastNameController = TextEditingController( text: AppConstants.currentUser.lastName);
+    _residentalAddressController = TextEditingController( text: AppConstants.currentUser.residentaladdress);
+    _emailController= TextEditingController( text: AppConstants.currentUser.email);
+    _contactNumberController = TextEditingController( text: AppConstants.currentUser.contactNumber);
+    _countryController = TextEditingController( text: AppConstants.currentUser.country);
+    _dobController = TextEditingController( text: AppConstants.currentUser.dob);
+
+
+
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -60,6 +84,7 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
                           style: TextStyle(
                             fontSize: 25.0,
                           ),
+                          controller: _firstNameController,
                         ),
                       ),
                       Padding(
@@ -71,6 +96,7 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
                           style: TextStyle(
                             fontSize: 25.0,
                           ),
+                          controller: _lastNameController,
                         ),
                       ),
                       Padding(
@@ -83,6 +109,7 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
                             fontSize: 25.0,
                           ),
                           maxLines: 2,
+                          controller: _residentalAddressController,
                         ),
                       ),
                       Padding(
@@ -95,6 +122,8 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
                             fontSize: 25.0,
                           ),
                           maxLines: 2,
+                          enabled: false,
+                          controller: _emailController,
                         ),
                       ),
                       Padding(
@@ -106,20 +135,39 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
                           style: TextStyle(
                             fontSize: 25.0,
                           ),
+                          enabled: false,
+                          controller: _contactNumberController,
+
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 25.0),
                         child: TextFormField(
                           decoration: InputDecoration(
-                              labelText: 'Password'
+                              labelText: 'Country'
                           ),
                           style: TextStyle(
                             fontSize: 25.0,
                           ),
+                          enabled: false,
+                          controller: _countryController,
+
                         ),
                       ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 25.0),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                              labelText: 'D.O.B'
+                          ),
+                          style: TextStyle(
+                            fontSize: 25.0,
+                          ),
+                          enabled: false,
+                          controller: _dobController,
 
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -134,7 +182,7 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
                       backgroundColor: Colors.black,
                       radius: MediaQuery.of(context).size.width/4.8,
                       child: CircleAvatar(
-                        backgroundImage: AssetImage('assets/image/2042468.jpg'),
+                        backgroundImage: AppConstants.currentUser.displayImage,
                         radius: MediaQuery.of(context).size.width/5,
                       ),
                     ),

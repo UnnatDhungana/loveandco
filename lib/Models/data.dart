@@ -6,8 +6,8 @@ import 'package:rental_application/Models/userObjects.dart';
 class practiceData {
   //user data
 
-  static List <User> user;
-  static List <Posting> posting;
+  static List <User> user=[];
+  static List <Posting> posting=[];
 
   static populateFields() {
     User user1 = User(
@@ -16,7 +16,7 @@ class practiceData {
       imagePath: "assets/images/unnat.jpg",
       email: "un43676@student.vit.edu",
       dob: "1999-02-07",
-      address: "Harbord Street",
+      residentaladdress: "Harbord Street",
       contactNumber: "0411658730",
       country: "Australia",
 
@@ -30,7 +30,7 @@ class practiceData {
       imagePath: "assets/images/aruna.jpg",
       email: "ar41336@student.vit.edu.au",
       dob: "1999",
-      address: "sydney",
+      residentaladdress: "sydney",
       contactNumber: "0411",
       country: "Australia",
     );
@@ -116,7 +116,30 @@ class practiceData {
     posting.add(posting1);
     posting.add(posting2);
 
-    Booking booking2= Booking();
+    Booking booking1= Booking();
+    booking1.createBooking(
+      posting2,
+      user1.createContactFromUser(),
+      [DateTime(2019,10,10),DateTime(2019,08,11),],
+    );
+    Booking booking2=Booking();
+    booking2.createBooking(posting2,
+        user2.createContactFromUser(),
+        [DateTime(2019,08,20),DateTime(2019,08,21)],);
+    posting2.bookings.add(booking1);
+    Review postingReview = Review();
+    postingReview.createReview(
+      user2.createContactFromUser(),
+        "Pretty decent place to live with your family, very quiet and peacefull",
+      3.5,
+      DateTime(2019,08,08),
+    );
+    posting1.reviews.add(postingReview);
+    user1.bookings.add(booking1);
+    user2.bookings.add(booking2);
+
+    user1.savedPostings.add(posting2);
+
 
   }
 

@@ -23,10 +23,11 @@ class Contact {
 }
 
 class User extends Contact {
+  String id;
   String email;
   String contactNumber;
   String dob;
-  String address;
+  String residentaladdress;
   String country;
   bool isHost;
   bool isCurrentlyHosting;
@@ -34,16 +35,18 @@ class User extends Contact {
   List <Conversation> conversations;
   List<Review> reviews;
   List<Booking> bookings;
+  List<Posting>savedPostings;
 
   User({
     String firstName="",String lastName="",String imagePath ="",
-    this.email="", this.address="",this.dob="", this.contactNumber="",this.country=""}):
+    this.email="", this.residentaladdress="",this.dob="", this.contactNumber="",this.country=""}):
       super(firstName: firstName, lastName: lastName, imagePath: imagePath){
     this.isHost = false;
     this.isCurrentlyHosting = false;
     this.conversations=[];
     this.bookings=[];
     this.reviews=[];
+    this.savedPostings=[];
 
 
   }
@@ -64,6 +67,17 @@ class User extends Contact {
   }
   void makeNewBooking(Booking booking) {
     this.bookings.add(booking);
+  }
+
+  void addSavePossting(Posting posting){
+    this.savedPostings.add(posting);
+  }
+  void removeSavedPosting(Posting posting){
+    for (int i=0; i< this.savedPostings.length; i++){
+      if (this.savedPostings[i].name == posting.name){
+        this.savedPostings.removeAt(i);
+      }
+    }
   }
 
   double getCurrentRating(){

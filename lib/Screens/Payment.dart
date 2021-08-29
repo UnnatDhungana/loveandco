@@ -33,24 +33,31 @@ class _paymentPageState extends State<paymentPage> {
          ListView(
              shrinkWrap: true,
              children: <Widget>[
-         Padding(
-           padding: const EdgeInsets.all(8.0),
-           child: MaterialButton(
-           height: MediaQuery.of(context).size.height/10.0,
-      onPressed: (){},
-      child: PaymentPageListViewItem( text: 'Payment Methods',iconData: Icons.payment
 
-      ),
+               Padding(
+                 padding: const EdgeInsets.all(8.0),
+
+                 child: MaterialButton(
+                   height: MediaQuery.of(context).size.height/10.0,
+                   onPressed: (){},
+
+
+                   child: PaymentPageListViewItem( text: 'Payment Methods',iconData: Icons.payment
+
+
+             ),
            ),
          ),
-    ],
+
+             ]
+           ,
 
            ),
          Padding(
            padding: const EdgeInsets.all(8.0),
            child: MaterialButton(
                onPressed: (){},
-               child: PaymentPageListViewItem(text:'Credits and Coupons', iconData: Icons.credit_score,),
+               child: PaymentPageListViewItem(text:'Credits and Coupons', iconData: Icons.credit_card,),
 
                ),
          )
@@ -69,17 +76,27 @@ class PaymentPageListViewItem extends StatelessWidget{
   Widget build(BuildContext context) {
     return ListTile(
         contentPadding: EdgeInsets.all(0.0),
-    leading: Text (
-    this.text,
-    style: TextStyle(
-    fontSize: 20.0,
-    fontWeight: FontWeight.normal,
-    ),
-    ),
-    trailing: Icon(
-    this.iconData,
-    size: 30.0,
-    ),
+
+      leading: Text (
+
+        this.text,
+
+        style: TextStyle(
+
+          fontSize: 20.0,
+
+          fontWeight: FontWeight.normal,
+
+        ),
+      ),
+
+      trailing: Icon(
+
+        this.iconData,
+
+        size: 30.0,
+      ),
+
     );
   }
 

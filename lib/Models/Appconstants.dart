@@ -7,7 +7,7 @@ class AppConstants{
   static final Color nonselectedIconColor = Colors.black;
 
   static User currentUser;
-  static bool isHosting = false;
+
 
   static final Map<int, String> monthDict={
     1: "January",

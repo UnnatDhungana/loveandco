@@ -1,6 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rental_application/Models/Appconstants.dart';
+import 'package:rental_application/Models/data.dart';
+import 'package:rental_application/Models/userObjects.dart';
 import 'package:rental_application/Screens/guestHomePage.dart';
 
 import 'signupPage.dart';
@@ -18,12 +21,34 @@ _LoginPageState createState() => _LoginPageState();
 
 class _LoginPageState extends State<LoginPage> {
 
+  final _formKey =GlobalKey<FormState>();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+
   void _signup(){
     Navigator.pushNamed(context, SignupPage.routeName);
   }
 
   void _login(){
-    Navigator.pushNamed(context, guestHomePage.routeName);
+    if(_formKey.currentState.validate()) {
+      String email = _emailController.text;
+      String password = _passwordController.text;
+      FirebaseAuth.instance.signInWithEmailAndPassword
+        (email: email,
+        password: password,
+      ).then((firebaseUser) {
+        String userID = firebaseUser.uid;
+        User user = User();
+        user.id =userID;
+
+
+        practiceData.populateFields();
+        AppConstants.currentUser=practiceData.user[1];
+        Navigator.pushNamed(context, guestHomePage.routeName);
+
+      });
+    }
   }
   @override
   Widget build(BuildContext context) {
@@ -46,17 +71,25 @@ class _LoginPageState extends State<LoginPage> {
                 textAlign: TextAlign.center,
               ),
               Form(
+                key: _formKey,
                 child: Column(
                   children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.only(top: 25.0),
                       child: TextFormField(
                         decoration: InputDecoration(
-                          labelText: 'USERNAME/EMAIL'
+                          labelText: 'EMAIL'
                         ),
                         style: TextStyle(
                           fontSize: 25.0,
                         ),
+                        validator: (text){
+                        if(!text.contains('@')){
+                          return 'Please Enter A Vaild Email';
+                        }
+                        return null;
+                      },
+                        controller: _emailController,
                       ),
                     ),
                     Padding(
@@ -68,7 +101,15 @@ class _LoginPageState extends State<LoginPage> {
                         style: TextStyle(
                           fontSize: 25.0,
                         ),
+                        obscureText: true,
+                        validator: (text){
+                          if (text.length<6){
+                            return'Password must be atleast 6 characters';
+                          }return null;
+                        },
+                        controller: _passwordController,
                       ),
+
                     ),
                   ],
                 ),
