@@ -3,14 +3,12 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:rental_application/Models/Appconstants.dart';
 import 'package:rental_application/Screens/ConversationPage.dart';
-import 'package:rental_application/Screens/HostHomePage.dart';
 import 'package:rental_application/Screens/PersonalinfoPage.dart';
 import 'package:rental_application/Screens/guestHomePage.dart';
 import 'package:rental_application/Screens/loginPage.dart';
 import 'package:rental_application/Screens/signupPage.dart';
 import 'package:rental_application/Screens/viewProfilePage.dart';
-
-import 'Payment.dart';
+import 'package:rental_application/Screens/PaymentMethodPage.dart';
 
 
 void main() {
@@ -25,7 +23,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
 
-        primarySwatch: Colors.blue, 
+        primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
       routes: {
@@ -35,8 +33,7 @@ class MyApp extends StatelessWidget {
         ConversationPage.routeName:(context)=>ConversationPage(),
         PersonalInfoPage.routeName:(context)=>PersonalInfoPage(),
         ViewProfilePage.routeName:(context)=>ViewProfilePage(),
-        hostHomePage.routeName:(context)=> hostHomePage(),
-        paymentPage.routeName:(context)=>paymentPage(),
+        //PaymentMethodPage.routeName:(context)=>PaymentMethodPage(),
       },
     );
   }

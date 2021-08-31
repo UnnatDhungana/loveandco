@@ -59,102 +59,114 @@ class _profilePageState extends State<profilePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 50, 50, 0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(bottom: 40.0),
-            child: Row(
-              children: <Widget>[
-                MaterialButton(onPressed: () {},
-                  child: CircleAvatar(
-                    backgroundColor: Colors.black,
-                    radius: MediaQuery
-                        .of(context)
-                        .size
-                        .width / 9.5,
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 50, 50, 0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(bottom: 40.0),
+              child: Row(
+                children: <Widget>[
+                  MaterialButton(onPressed: () {},
                     child: CircleAvatar(
-                      backgroundImage: AppConstants.currentUser.displayImage,
+                      backgroundColor: Colors.black,
                       radius: MediaQuery
                           .of(context)
                           .size
-                          .width / 10,
+                          .width / 9.5,
+                      child: CircleAvatar(
+                        backgroundImage: AppConstants.currentUser.displayImage,
+                        radius: MediaQuery
+                            .of(context)
+                            .size
+                            .width / 10,
+                      ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      AutoSizeText(
-                        AppConstants.currentUser.getFullName(),
-                        style: TextStyle(
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        AutoSizeText(
+                          AppConstants.currentUser.getFullName(),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 21
+                          ),
+                        ),
+                        AutoSizeText(
+                          AppConstants.currentUser.email,
+                          style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 21
+                            fontSize: 15.5,
+                          ),
                         ),
-                      ),
-                      AutoSizeText(
-                        AppConstants.currentUser.email,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15.5,
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
+
+                ],
+
+              ),
+            ),
+            ListView(
+              shrinkWrap: true,
+              children: <Widget>[
+                MaterialButton(
+                  height: MediaQuery
+                      .of(context)
+                      .size
+                      .height / 9.0,
+                  onPressed: () {
+                    Navigator.pushNamed(context, PersonalInfoPage.routeName);
+                  },
+                  child: ProfilePageListViewItem(
+                    text: 'Personal Information', iconData: Icons.person_sharp,),
                 ),
+
 
               ],
-
             ),
-          ),
-          ListView(
-            shrinkWrap: true,
-            children: <Widget>[
-              MaterialButton(
-                height: MediaQuery
-                    .of(context)
-                    .size
-                    .height / 9.0,
-                onPressed: () {
-                  Navigator.pushNamed(context, PersonalInfoPage.routeName);
-                },
-                child: ProfilePageListViewItem(
-                  text: 'Personal Information', iconData: Icons.person_sharp,),
-              ),
 
 
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 10.0),
-            child: Text(
-              'Reviews',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 25.0,
+            MaterialButton(
+              height: MediaQuery
+                  .of(context)
+                  .size
+                  .height / 9.0,
+              onPressed: _logout,
+              child: ProfilePageListViewItem(
+                text: 'Logout', iconData: Icons.logout,),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10.0),
+              child: Text(
+                'Reviews',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25.0,
 
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 10.0),
-            child: ListView.builder(
-                itemCount: 2,
-                shrinkWrap: true,
-                itemBuilder: (context, index) {
-                  return ReviewListTile();
-                }
-            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10.0),
+              child: ListView.builder(
+                  itemCount: 2,
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return ReviewListTile();
+                  }
+              ),
 
-          ),
-          MaterialButton(
+            ),
+            MaterialButton(
               height:MediaQuery
-                .of(context)
+                  .of(context)
                   .size
                   .height/9.0,
               onPressed: _changeHosting,
@@ -163,19 +175,10 @@ class _profilePageState extends State<profilePage> {
               ),),
 
 
-          MaterialButton(
-            height: MediaQuery
-                .of(context)
-                .size
-                .height / 9.0,
-            onPressed: _logout,
-            child: ProfilePageListViewItem(
-              text: 'Logout', iconData: Icons.logout,),
-          ),
+          ],
+        ),
 
-        ],
       ),
-
     );
   }
 }
