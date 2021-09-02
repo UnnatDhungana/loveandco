@@ -2,7 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:rental_application/Models/Appconstants.dart';
+import 'package:rental_application/Screens/BondDetails.dart';
 import 'package:rental_application/Screens/ConversationPage.dart';
+import 'package:rental_application/Screens/LeaseAgreementPage.dart';
 import 'package:rental_application/Screens/PersonalinfoPage.dart';
 import 'package:rental_application/Screens/guestHomePage.dart';
 import 'package:rental_application/Screens/loginPage.dart';
@@ -33,7 +35,9 @@ class MyApp extends StatelessWidget {
         ConversationPage.routeName:(context)=>ConversationPage(),
         PersonalInfoPage.routeName:(context)=>PersonalInfoPage(),
         ViewProfilePage.routeName:(context)=>ViewProfilePage(),
-        //PaymentMethodPage.routeName:(context)=>PaymentMethodPage(),
+        //paymentMethodPage.routeName:(context)=>PaymentMethodPage(),
+        LeaseAgreementPage.routeName:(context)=>LeaseAgreementPage(),
+        BondDetailsPage.routeName:(context)=>BondDetailsPage(),
       },
     );
   }

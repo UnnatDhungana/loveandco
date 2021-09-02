@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rental_application/Models/Appconstants.dart';
-import 'package:rental_application/Screens/BondDetails.dart';
-import 'package:rental_application/Screens/LeaseAgreementPage.dart';
 import 'package:rental_application/Views/TextWidget.dart';
 
 import 'PaymentMethodPage.dart';
@@ -38,7 +36,7 @@ class _leasedocumentPageState extends State<leasedocumentPage> {
                         .size
                         .height / 10.0,
                     onPressed: () {
-                      Navigator.pushNamed(context, LeaseAgreementPage.routeName);
+                      Navigator.pushNamed(context, PaymentMethodPage.routeName);
                     },
                     child: leasedocumentPagelistviewitem(
                         text: 'lease Agreement', iconData: Icons.picture_as_pdf,
@@ -52,9 +50,7 @@ class _leasedocumentPageState extends State<leasedocumentPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: MaterialButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, BondDetailsPage.routeName);
-                },
+                onPressed: () {},
                 child: leasedocumentPagelistviewitem(
                   text: 'Bond Details', iconData: Icons.credit_score,),
 

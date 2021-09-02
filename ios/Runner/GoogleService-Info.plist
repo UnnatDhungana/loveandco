@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1053997916583-kbgn0bdhvri8nk0odljp6sacgvc5rbei.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1053997916583-kbgn0bdhvri8nk0odljp6sacgvc5rbei</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBwXYozTQ2mE7SfHlIPoNqzREJgPR4KF2U</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1053997916583</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.rentalApplication</string>
+	<key>PROJECT_ID</key>
+	<string>love-and-co</string>
+	<key>STORAGE_BUCKET</key>
+	<string>love-and-co.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1053997916583:ios:9faa042927b57d7a7c1682</string>
+</dict>
+</plist>
