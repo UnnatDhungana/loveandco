@@ -7,6 +7,7 @@ import 'package:rental_application/Screens/HostHomePage.dart';
 import 'package:rental_application/Screens/PersonalinfoPage.dart';
 import 'package:rental_application/Screens/guestHomePage.dart';
 import 'package:rental_application/Screens/loginPage.dart';
+import 'package:rental_application/Screens/viewProfilePage.dart';
 import 'package:rental_application/Views/TextWidget.dart';
 import 'package:rental_application/Views/listwidget.dart';
 
@@ -59,9 +60,12 @@ class _profilePageState extends State<profilePage> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 50, 50, 0),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(10, 50, 10, 0),
+      
+      
+      
+      child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,7 +74,15 @@ class _profilePageState extends State<profilePage> {
               padding: const EdgeInsets.only(bottom: 40.0),
               child: Row(
                 children: <Widget>[
-                  MaterialButton(onPressed: () {},
+                  MaterialButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                      MaterialPageRoute(
+                          builder: (context)=> ViewProfilePage(contact: AppConstants.currentUser.createContactFromUser(),),
+                      ),
+                      );
+                    },
                     child: CircleAvatar(
                       backgroundColor: Colors.black,
                       radius: MediaQuery
@@ -102,8 +114,9 @@ class _profilePageState extends State<profilePage> {
                           AppConstants.currentUser.email,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 15.5,
+                            fontSize: 10.5,
                           ),
+                          maxLines: 2,
                         ),
                       ],
                     ),
@@ -131,17 +144,6 @@ class _profilePageState extends State<profilePage> {
 
               ],
             ),
-
-
-            MaterialButton(
-              height: MediaQuery
-                  .of(context)
-                  .size
-                  .height / 9.0,
-              onPressed: _logout,
-              child: ProfilePageListViewItem(
-                text: 'Logout', iconData: Icons.logout,),
-            ),
             Padding(
               padding: const EdgeInsets.only(top: 10.0),
               child: Text(
@@ -165,20 +167,30 @@ class _profilePageState extends State<profilePage> {
 
             ),
             MaterialButton(
-              height:MediaQuery
+                height:MediaQuery
+                  .of(context)
+                    .size
+                    .height/9.0,
+                onPressed: _changeHosting,
+                child: ProfilePageListViewItem(
+                  text: 'Change Host',iconData: Icons.more,
+                ),),
+
+
+            MaterialButton(
+              height: MediaQuery
                   .of(context)
                   .size
-                  .height/9.0,
-              onPressed: _changeHosting,
+                  .height / 9.0,
+              onPressed: _logout,
               child: ProfilePageListViewItem(
-                text: 'Change Host',iconData: Icons.more,
-              ),),
-
+                text: 'Logout', iconData: Icons.logout,),
+            ),
 
           ],
         ),
-
       ),
+
     );
   }
 }

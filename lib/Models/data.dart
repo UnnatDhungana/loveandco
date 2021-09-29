@@ -13,7 +13,6 @@ class practiceData {
     User user1 = User(
       firstName: "Unnat",
       lastName: "Dhungana",
-      imagePath: "assets/images/unnat.jpg",
       email: "un43676@student.vit.edu",
       dob: "1999-02-07",
       residentaladdress: "Harbord Street",
@@ -27,8 +26,7 @@ class practiceData {
     User user2 = User(
       firstName: "Aruna",
       lastName: "Acharya",
-      imagePath: "assets/images/aruna.jpg",
-      email: "ar41336@student.vit.edu.au",
+      email: "arunna.acharya@gmail.com",
       dob: "1999",
       residentaladdress: "sydney",
       contactNumber: "0411",

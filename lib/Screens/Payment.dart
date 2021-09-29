@@ -53,7 +53,7 @@ class _paymentPageState extends State<paymentPage> {
            padding: const EdgeInsets.all(8.0),
            child: MaterialButton(
                onPressed: (){},
-               child: PaymentPageListViewItem(text:'Payment History', iconData: Icons.credit_score,),
+               child: PaymentPageListViewItem(text:'Payment History', iconData: Icons.payments_rounded,),
 
                ),
          )

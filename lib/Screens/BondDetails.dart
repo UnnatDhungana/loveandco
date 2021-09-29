@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rental_application/Models/Appconstants.dart';
-import 'package:rental_application/Views/TextWidget.dart';
 
-import 'PaymentMethodPage.dart';
 
 
 class BondDetailsPage extends StatefulWidget {
 
+
+
   static final String routeName='/BondDetailsPageRoute';
 
   BondDetailsPage({Key key}) : super(key: key);
+
 
   @override
   _BondDetailsPageState createState() => _BondDetailsPageState();
@@ -18,14 +18,14 @@ class BondDetailsPage extends StatefulWidget {
 
 class _BondDetailsPageState extends State<BondDetailsPage> {
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        title: Text('BOND DETAILS'),
+      ),
 
-        appBar: AppBar(
-        title: AppBarText(text: 'Bond Details',)
-    ),
     );
   }
 }

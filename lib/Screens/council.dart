@@ -5,7 +5,6 @@ import 'package:rental_application/Views/TextWidget.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-
 class councilPage extends StatefulWidget {
 
   static final String routeName='/councilPageRoute';

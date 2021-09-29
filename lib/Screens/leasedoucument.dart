@@ -1,11 +1,11 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rental_application/Models/Appconstants.dart';
 import 'package:rental_application/Screens/BondDetails.dart';
-import 'package:rental_application/Screens/LeaseAgreementPage.dart';
+import 'package:rental_application/Screens/leaseAgreement.dart';
 import 'package:rental_application/Views/TextWidget.dart';
-
-import 'PaymentMethodPage.dart';
+import 'package:rental_application/file/viewer.dart';
 
 
 class leasedocumentPage extends StatefulWidget {
@@ -28,6 +28,7 @@ class _leasedocumentPageState extends State<leasedocumentPage> {
         child: Column(
           children: <Widget>[
             ListView(
+
               shrinkWrap: true,
               children: <Widget>[
                 Padding(
@@ -38,10 +39,10 @@ class _leasedocumentPageState extends State<leasedocumentPage> {
                         .size
                         .height / 10.0,
                     onPressed: () {
-                      Navigator.pushNamed(context, LeaseAgreementPage.routeName);
+                      Navigator.pushNamed(context,LeaseAgreementPage.routeName );
                     },
                     child: leasedocumentPagelistviewitem(
-                        text: 'lease Agreement', iconData: Icons.picture_as_pdf,
+                        text: 'Lease Agreement', iconData: Icons.picture_as_pdf,
 
                     ),
                   ),
@@ -56,7 +57,7 @@ class _leasedocumentPageState extends State<leasedocumentPage> {
                   Navigator.pushNamed(context, BondDetailsPage.routeName);
                 },
                 child: leasedocumentPagelistviewitem(
-                  text: 'Bond Details', iconData: Icons.credit_score,),
+                  text: 'Bond Details', iconData: Icons.credit_card_sharp,),
 
               ),
             ),

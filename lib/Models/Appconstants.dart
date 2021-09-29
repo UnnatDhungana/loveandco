@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:rental_application/Models/userObjects.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 class AppConstants{
   static final String appName="Love&Co. Rental App";
   static final Color selectedIconColor = Colors.deepOrange;
   static final Color nonselectedIconColor = Colors.black;
 
   static User currentUser;
+
 
 
   static final Map<int, String> monthDict={

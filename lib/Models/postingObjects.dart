@@ -5,6 +5,7 @@ import 'package:rental_application/Models/userObjects.dart';
 
 
 class Posting{
+  String id;
   String name;
   String type;
   double price;
@@ -39,6 +40,10 @@ class Posting{
     this.bookings=[];
 
   }
+
+
+
+
   int getNumGuests(){
     int numGuests =0;
     numGuests += this.beds['Small'];

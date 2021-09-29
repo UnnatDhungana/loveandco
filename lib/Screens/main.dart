@@ -4,13 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:rental_application/Models/Appconstants.dart';
 import 'package:rental_application/Screens/BondDetails.dart';
 import 'package:rental_application/Screens/ConversationPage.dart';
-import 'package:rental_application/Screens/LeaseAgreementPage.dart';
 import 'package:rental_application/Screens/PersonalinfoPage.dart';
 import 'package:rental_application/Screens/guestHomePage.dart';
 import 'package:rental_application/Screens/loginPage.dart';
 import 'package:rental_application/Screens/signupPage.dart';
 import 'package:rental_application/Screens/viewProfilePage.dart';
-import 'package:rental_application/Screens/PaymentMethodPage.dart';
+import 'leaseAgreement.dart';
 
 
 void main() {
@@ -36,8 +35,9 @@ class MyApp extends StatelessWidget {
         PersonalInfoPage.routeName:(context)=>PersonalInfoPage(),
         ViewProfilePage.routeName:(context)=>ViewProfilePage(),
         //paymentMethodPage.routeName:(context)=>PaymentMethodPage(),
-        LeaseAgreementPage.routeName:(context)=>LeaseAgreementPage(),
         BondDetailsPage.routeName:(context)=>BondDetailsPage(),
+        LeaseAgreementPage.routeName: (context)=> LeaseAgreementPage(),
+
       },
     );
   }

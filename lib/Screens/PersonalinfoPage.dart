@@ -31,7 +31,8 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
   }
 
   @override
-  void initState(){
+  Future<void> initState() async {
+
     _firstNameController = TextEditingController( text: AppConstants.currentUser.firstName);
     _lastNameController = TextEditingController( text: AppConstants.currentUser.lastName);
     _residentalAddressController = TextEditingController( text: AppConstants.currentUser.residentaladdress);

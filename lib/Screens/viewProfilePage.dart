@@ -1,6 +1,8 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rental_application/Models/Appconstants.dart';
+import 'package:rental_application/Models/userObjects.dart';
 import 'package:rental_application/Screens/guestHomePage.dart';
 import 'package:rental_application/Views/TextWidget.dart';
 import 'package:rental_application/Views/listwidget.dart';
@@ -10,13 +12,38 @@ class ViewProfilePage extends StatefulWidget {
 
   static final String routeName='/viewProfilePageRoute';
 
-  ViewProfilePage({Key key}) : super(key: key);
+  final Contact contact;
+
+  ViewProfilePage({this.contact,Key key}) : super(key: key);
 
   @override
   _ViewProfilePageState createState() => _ViewProfilePageState();
 }
 
 class _ViewProfilePageState extends State<ViewProfilePage> {
+
+  User _user;
+
+  @override
+  void initState(){
+    //this.user=widget.contact.createUserFromContact();
+    //_loadUser();
+
+    if(widget.contact.id ==AppConstants.currentUser.id){
+      _user = AppConstants.currentUser;
+    }else{
+      this._user=widget.contact.createUsersFromContact();
+      this._user.getUserInfoFromFirestore().whenComplete(() {
+        super.initState();
+      });
+    }
+
+    super.initState();
+  }
+  void _loadUser(){
+    String contactName =widget.contact.firstName;
+  }
+
 
   void _signup(){
     Navigator.pushNamed(context, guestHomePage.routeName);
@@ -27,116 +54,101 @@ class _ViewProfilePageState extends State<ViewProfilePage> {
     return Scaffold(
 
       appBar: AppBar(
-          title: AppBarText(text: 'SignUp',)
+          title: AppBarText(text: 'Profile',),
+
       ),
 
       body: Center(
         child: SingleChildScrollView(
 
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(50, 50,50, 0),
+            padding: const EdgeInsets.fromLTRB(50, 20,50, 0),
             child: Column(
 
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                Text(
-                  'Please enter following information:',
-                  style: TextStyle(
-                    fontSize: 30.0,
-                  ),
-                  textAlign: TextAlign.center,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      width: MediaQuery.of(context).size.width * 3/6,
+                      child: AutoSizeText(
+                       'Hi! My name is ${_user.firstName}!',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                          fontSize:30,
+                      ),
+                      ),
+
+                    ),
+                    CircleAvatar(
+                      backgroundColor: Colors.black,
+                      child: CircleAvatar(
+                        backgroundImage: _user.displayImage,
+                        radius: MediaQuery.of(context).size.width/10,
+                      ),
+                    ),
+                  ],
                 ),
-                Form(
-                  child: Column(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(top: 25.0),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                              labelText: 'First Name'
-                          ),
-                          style: TextStyle(
-                            fontSize: 25.0,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 25.0),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                              labelText: 'Last Name'
-                          ),
-                          style: TextStyle(
-                            fontSize: 25.0,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 25.0),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                              labelText: 'Residential Address'
-                          ),
-                          style: TextStyle(
-                            fontSize: 25.0,
-                          ),
-                          maxLines: 2,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 25.0),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                              labelText: 'Email Address'
-                          ),
-                          style: TextStyle(
-                            fontSize: 25.0,
-                          ),
-                          maxLines: 2,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 25.0),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                              labelText: 'Contact Number'
-                          ),
-                          style: TextStyle(
-                            fontSize: 25.0,
-                          ),
-                        ),
-                      ),
-                    ],
+                Padding(
+                  padding: const EdgeInsets.only(top: 50.0),
+                  child: Text(
+                    'About Me:',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                    ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 40.0, bottom:35.0),
-                  child: MaterialButton(
-                    onPressed: () {
-                      _signup();
-                    },
-                    child:Text(
-                      'Submit',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25.0,
-                        color: Colors.white,
-                      ),
-                    ),
-                    color: Colors.blue,
-                    height: MediaQuery.of(context).size.height/15,
-                    minWidth: double.infinity,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadiusDirectional.circular(15),
+                  padding: const EdgeInsets.only(top: 20.0),
+                  child: AutoSizeText(
+                    _user.email,
+                    style: TextStyle(
+                      fontSize: 20.0,
                     ),
                   ),
                 ),
-              ],
+                Padding(
+                  padding: const EdgeInsets.only(top: 20.0),
+                  child: Row(
+                    children: <Widget>[
+                      Icon(Icons.home),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15.0),
+                        child: AutoSizeText(
+                          'Lives in ${_user.country},${_user.residentaladdress}',
+                          style: TextStyle(
+                            fontSize: 20.0,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.only(top : 20.0),
+                  child: Text(
+                    'Reviews:',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20.0),
+                  child: ReviewListTile(),
+                ),
+              ]
+                  ),
+                ),
+
             ),
           ),
-        ),
-      ),
-    );
+        );
+
   }
 
 }
