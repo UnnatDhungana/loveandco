@@ -9,6 +9,7 @@ import 'package:rental_application/Screens/guestHomePage.dart';
 import 'package:rental_application/Screens/loginPage.dart';
 import 'package:rental_application/Screens/signupPage.dart';
 import 'package:rental_application/Screens/viewProfilePage.dart';
+import 'PaymentMethodPage.dart';
 import 'leaseAgreement.dart';
 
 
@@ -22,8 +23,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         ConversationPage.routeName:(context)=>ConversationPage(),
         PersonalInfoPage.routeName:(context)=>PersonalInfoPage(),
         ViewProfilePage.routeName:(context)=>ViewProfilePage(),
-        //paymentMethodPage.routeName:(context)=>PaymentMethodPage(),
+        PaymentMethodPage.routeName:(context)=>PaymentMethodPage(),
         BondDetailsPage.routeName:(context)=>BondDetailsPage(),
         LeaseAgreementPage.routeName: (context)=> LeaseAgreementPage(),
 

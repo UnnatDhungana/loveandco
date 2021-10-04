@@ -7,7 +7,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.5.0"
+    version: "2.6.1"
   auto_size_text:
     dependency: "direct main"
     description:
@@ -146,6 +146,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.3.2"
+  flutter_credit_card:
+    dependency: "direct main"
+    description:
+      name: flutter_credit_card
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.0"
   flutter_full_pdf_viewer:
     dependency: "direct main"
     description:
@@ -285,7 +292,7 @@ packages:
     source: hosted
     version: "0.1.4"
   path_provider:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: path_provider
       url: "https://pub.dartlang.org"
@@ -337,7 +344,7 @@ packages:
       name: source_span
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.0"
+    version: "1.8.1"
   sqflite:
     dependency: transitive
     description:
@@ -421,7 +428,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.19"
+    version: "0.3.0"
   timezone:
     dependency: transitive
     description:

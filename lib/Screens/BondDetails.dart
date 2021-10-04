@@ -22,7 +22,7 @@ class _BondDetailsPageState extends State<BondDetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.blue,
         title: Text('BOND DETAILS'),
       ),
 
