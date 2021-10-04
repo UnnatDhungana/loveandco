@@ -21,7 +21,7 @@ class _inboxPageState extends State<inboxPage> {
     return Padding(
       padding: const EdgeInsets.only(top: 15.0),
       child: ListView.builder(
-          itemCount: 2,
+          itemCount: 1,
           itemExtent: MediaQuery
               .of(context)
               .size

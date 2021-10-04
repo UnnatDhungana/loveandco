@@ -46,8 +46,7 @@ dependencies:
 
 
   table_calendar: ^3.0.2
-  syncfusion_flutter_calendar: ^19.2.60
-  syncfusion_flutter_core: ^19.2.60
+  syncfusion_flutter_calendar: ^19.3.43+1
 
 
   flutter_plugin_pdf_viewer: ^1.0.0
