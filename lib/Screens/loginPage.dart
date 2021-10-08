@@ -67,6 +67,15 @@ class _LoginPageState extends State<LoginPage> {
 
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
+                SizedBox(
+                  height: 200,
+                  child: Image.asset("assets/image/Logo.png",
+                  fit: BoxFit.contain,
+                  ),
+                ),
+
+
+
                 Text(
                     'Welcome to ${AppConstants.appName}!',
                 style: TextStyle(
@@ -127,6 +136,7 @@ class _LoginPageState extends State<LoginPage> {
                         },
                     child:Text(
                       'Login',
+
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 25.0,
@@ -139,7 +149,9 @@ class _LoginPageState extends State<LoginPage> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadiusDirectional.circular(15),
                   ),
+
                 ),
+
                 ),
 
                 Padding(

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rental_application/Models/Appconstants.dart';
 import 'package:rental_application/Views/TextWidget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 class utilityPage extends StatefulWidget {
@@ -15,6 +16,45 @@ class utilityPage extends StatefulWidget {
 }
 
 class _utilityPageState extends State<utilityPage> {
+
+  Future <dynamic> _elcURL() async{
+
+      const url = 'https://energy.finder.com.au/?rc=45056&utm_source=google&utm_medium=cpc&gclid=Cj0KCQjwwNWKBhDAARIsAJ8HkhfV6HA9_CgSbl7pM-WRC4FXa38ivhecSge8kihhjqZ53FHWO4rp0_saAgDUEALw_wcB';
+      if (await canLaunch(url)) {
+        await launch(url);
+      } else {
+        throw 'Could not launch $url';
+      }
+  }
+  Future <dynamic> _gasURL() async{
+
+    const url = 'https://energy.finder.com.au/?rc=45056&utm_source=google&utm_medium=cpc&gclid=Cj0KCQjwwNWKBhDAARIsAJ8HkhfV6HA9_CgSbl7pM-WRC4FXa38ivhecSge8kihhjqZ53FHWO4rp0_saAgDUEALw_wcB';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+  Future <dynamic> _waterURL() async{
+
+    const url = 'https://flutter.io';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+  Future <dynamic> _maintenanceURL() async{
+
+    const url = 'https://flutter.io';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+
 
 
   @override
@@ -30,11 +70,12 @@ class _utilityPageState extends State<utilityPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
                   height: MediaQuery.of(context).size.height/10.0,
-                  onPressed: (){
-                  },
+                  onPressed: _elcURL,
+
                   child: UtilityPageListViewItem( text: 'Electricity',iconData: Icons.electrical_services_sharp
 
                   ),
+
                 ),
               ),
             ],
@@ -43,22 +84,22 @@ class _utilityPageState extends State<utilityPage> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: MaterialButton(
-              onPressed: (){},
+              onPressed: _gasURL,
               child: UtilityPageListViewItem(text:'gas', iconData: Icons.local_gas_station,),
 
             ),
           ),
-    Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: MaterialButton(
-    onPressed: (){},
-    child: UtilityPageListViewItem(text:'Water', iconData: Icons.water,),
-    )
-    ),
+         Padding(
+          padding: const EdgeInsets.all(8.0),
+             child: MaterialButton(
+            onPressed: _waterURL,
+                 child: UtilityPageListViewItem(text:'Water', iconData: Icons.local_drink_sharp,),
+                )
+                ),
           Padding(
               padding: const EdgeInsets.all(8.0),
               child: MaterialButton(
-                onPressed: (){},
+                onPressed: _maintenanceURL,
                 child: UtilityPageListViewItem(text:'Maintenance', iconData: Icons.home_repair_service,),
               )
           ),
@@ -66,6 +107,7 @@ class _utilityPageState extends State<utilityPage> {
         ],
       ),
     );
+
   }
 
 }
