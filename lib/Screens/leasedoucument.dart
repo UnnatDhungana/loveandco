@@ -5,7 +5,7 @@ import 'package:rental_application/Models/Appconstants.dart';
 import 'package:rental_application/Screens/BondDetails.dart';
 import 'package:rental_application/Screens/leaseAgreement.dart';
 import 'package:rental_application/Views/TextWidget.dart';
-import 'package:rental_application/file/viewer.dart';
+
 
 
 class leasedocumentPage extends StatefulWidget {

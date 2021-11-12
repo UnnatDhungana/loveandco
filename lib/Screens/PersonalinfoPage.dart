@@ -1,5 +1,7 @@
+import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:rental_application/Models/Appconstants.dart';
 import 'package:rental_application/Screens/guestHomePage.dart';
 import 'package:rental_application/Views/TextWidget.dart';
@@ -25,13 +27,21 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
   TextEditingController _countryController;
   TextEditingController _dobController;
 
+  File _newImageFile;
 
+  void _chooseImage() async {
+    var imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
+    if (imageFile != null) {
+      _newImageFile = imageFile;
+      setState(() {});
+    }
+  }
   void _saveinfo(){
     Navigator.pushNamed(context, guestHomePage.routeName);
   }
 
   @override
-  Future<void> initState() async {
+  void initState() {
 
     _firstNameController = TextEditingController( text: AppConstants.currentUser.firstName);
     _lastNameController = TextEditingController( text: AppConstants.currentUser.lastName);
@@ -41,7 +51,7 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
     _countryController = TextEditingController( text: AppConstants.currentUser.country);
     _dobController = TextEditingController( text: AppConstants.currentUser.dob);
 
-
+    super.initState();
 
   }
 
