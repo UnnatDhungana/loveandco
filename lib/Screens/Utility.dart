@@ -35,9 +35,9 @@ class _utilityPageState extends State<utilityPage> {
       throw 'Could not launch $url';
     }
   }
-  Future <dynamic> _waterURL() async{
+  Future <dynamic> _utilityURL() async{
 
-    const url = 'https://flutter.io';
+    const url = 'https://www.finder.com.au/broadband-plans?futm_medium=cpc&futm_source=google&futm_campaign=6525225547~82102519807&futm_term=internet%20comparison~e~g~kwd-96068036&futm_content=~~CjwKCAjw2P-KBhByEiwADBYWCp1pwGCtoAuoNudpsTlmM8JDlPtE8DZhD3P4KrLU552Cl1STLHZIBxoCrRYQAvD_BwE&gclid=CjwKCAjw2P-KBhByEiwADBYWCp1pwGCtoAuoNudpsTlmM8JDlPtE8DZhD3P4KrLU552Cl1STLHZIBxoCrRYQAvD_BwE';
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -46,7 +46,7 @@ class _utilityPageState extends State<utilityPage> {
   }
   Future <dynamic> _maintenanceURL() async{
 
-    const url = 'https://flutter.io';
+    const url = 'https://www.airtasker.com/';
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -92,7 +92,7 @@ class _utilityPageState extends State<utilityPage> {
          Padding(
           padding: const EdgeInsets.all(8.0),
              child: MaterialButton(
-            onPressed: _waterURL,
+            onPressed: _utilityURL,
                  child: UtilityPageListViewItem(text:'Water', iconData: Icons.local_drink_sharp,),
                 )
                 ),

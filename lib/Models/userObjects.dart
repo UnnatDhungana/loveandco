@@ -6,7 +6,7 @@ import 'package:rental_application/Models/Appconstants.dart';
 import 'package:rental_application/Models/messagingObjects.dart';
 import 'package:rental_application/Models/postingObjects.dart';
 import 'package:rental_application/Models/reviewObjects.dart';
-
+import 'dart:io';
 class Contact {
   String id;
   String firstName;
@@ -14,7 +14,7 @@ class Contact {
   //String imagePath;
   MemoryImage displayImage;
 
-  Contact({this.id="",this.firstName="",this.lastName="", MemoryImage displayImage});
+  Contact({this.id="",this.firstName="",this.lastName="", this.displayImage});
 
 
  Future<void> getContactInfoFromFirestore()async{
@@ -27,7 +27,7 @@ class Contact {
   }
   Future<MemoryImage> getImageFromFirestorage() async{
    if(displayImage != null){ return displayImage;}
-    final String imagePath ="userImages/${this.id}/profile_pic.jpg";
+    final String imagePath ="userImages/${this.id}/profile_pic.JPG";
    final imageData =await FirebaseStorage.instance.ref().child(imagePath).getData(1024*1024);
    this.displayImage = MemoryImage(imageData);
    return this.displayImage;
@@ -41,7 +41,7 @@ class Contact {
 
   User createUsersFromContact(){
    return User(
-     id: id,
+     id: this.id,
      firstName: firstName,
      lastName: lastName,
      displayImage: displayImage,
@@ -52,6 +52,8 @@ class Contact {
 
 class User extends Contact {
 
+
+  DocumentSnapshot snapshot;
   String email;
   String contactNumber;
   String dob;
@@ -59,6 +61,7 @@ class User extends Contact {
   String country;
   bool isHost;
   bool isCurrentlyHosting;
+  String password;
 
   List <Conversation> conversations;
   List<Review> reviews;
@@ -85,6 +88,7 @@ class User extends Contact {
     DocumentSnapshot snapshot = await Firestore.instance.collection('users')
         .document(this.id)
         .get();
+    this.snapshot=snapshot;
     this.firstName = snapshot['firstName']??"";
     this.lastName = snapshot['lastName']??"";
     this.email=snapshot['email']??"";

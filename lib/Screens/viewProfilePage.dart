@@ -34,20 +34,15 @@ class _ViewProfilePageState extends State<ViewProfilePage> {
     }else{
       this._user=widget.contact.createUsersFromContact();
       this._user.getUserInfoFromFirestore().whenComplete(() {
-        super.initState();
+       setState(() {
+
+       });
       });
     }
 
     super.initState();
   }
-  void _loadUser(){
-    String contactName =widget.contact.firstName;
-  }
 
-
-  void _signup(){
-    Navigator.pushNamed(context, guestHomePage.routeName);
-  }
 
   @override
   Widget build(BuildContext context) {

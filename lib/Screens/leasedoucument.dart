@@ -66,10 +66,26 @@ class _leasedocumentPageState extends State<leasedocumentPage> {
               child: MaterialButton(
                 onPressed: () {},
                 child: leasedocumentPagelistviewitem(
-                  text: 'Photos', iconData: Icons.photo,),
-
+                  text: 'Property Images', iconData: Icons.photo,),
               ),
-            )
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: MaterialButton(
+                  onPressed: (){},
+              child: leasedocumentPagelistviewitem(
+                text: 'Maintenances Reports',iconData: Icons.attach_file,
+              ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: MaterialButton(
+                onPressed: () {},
+                child: leasedocumentPagelistviewitem(
+                  text: 'Inspection Report', iconData: Icons.photo,),
+              ),
+            ),
           ],
 
 

@@ -30,7 +30,7 @@ class _hostHomePageState extends State<hostHomePage> {
     'Payment',
     'Council',
     'Utility',
-    'Lease Documents'
+    'Documents'
   ];
 
   final List<Widget> _pages =[

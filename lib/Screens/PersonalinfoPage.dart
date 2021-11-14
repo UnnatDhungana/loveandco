@@ -193,7 +193,9 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
                       backgroundColor: Colors.black,
                       radius: MediaQuery.of(context).size.width/4.8,
                       child: CircleAvatar(
-                        backgroundImage: AppConstants.currentUser.displayImage,
+                        backgroundImage:(_newImageFile!=null)
+                        ? FileImage(_newImageFile)
+                        :AppConstants.currentUser.displayImage,
                         radius: MediaQuery.of(context).size.width/5,
                       ),
                     ),

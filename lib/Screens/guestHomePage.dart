@@ -30,7 +30,7 @@ final List<String> _pageTitles=[
   'Payment',
   'Council',
   'Utility',
-  'Lease Documents'
+  'Documents'
 ];
 
 final List<Widget> _pages =[

@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_credit_card/credit_card_brand.dart';
 import 'package:rental_application/Views/TextWidget.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
-//import 'package:stripe_payment/stripe_payment.dart';
+
 
 class PaymentMethodPage extends StatefulWidget {
 

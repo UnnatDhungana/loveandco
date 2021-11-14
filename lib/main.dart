@@ -9,8 +9,8 @@ import 'package:rental_application/Screens/guestHomePage.dart';
 import 'package:rental_application/Screens/loginPage.dart';
 import 'package:rental_application/Screens/signupPage.dart';
 import 'package:rental_application/Screens/viewProfilePage.dart';
-import 'PaymentMethodPage.dart';
-import 'leaseAgreement.dart';
+import 'package:rental_application/Screens/PaymentMethodPage.dart';
+import 'Screens/leaseAgreement.dart';
 
 
 void main() {
