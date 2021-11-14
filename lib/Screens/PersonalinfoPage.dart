@@ -27,6 +27,8 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
   TextEditingController _countryController;
   TextEditingController _dobController;
 
+
+
   File _newImageFile;
 
   void _chooseImage() async {

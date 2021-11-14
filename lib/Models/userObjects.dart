@@ -27,7 +27,7 @@ class Contact {
   }
   Future<MemoryImage> getImageFromFirestorage() async{
    if(displayImage != null){ return displayImage;}
-    final String imagePath ="userImages/${this.id}/profile_pic.JPG";
+    final String imagePath ="userImages/${this.id}/profile_pic.jpg";
    final imageData =await FirebaseStorage.instance.ref().child(imagePath).getData(1024*1024);
    this.displayImage = MemoryImage(imageData);
    return this.displayImage;
@@ -62,6 +62,13 @@ class User extends Contact {
   bool isHost;
   bool isCurrentlyHosting;
   String password;
+  String Rent;
+  String DueDays;
+  String DueAmount;
+  String LastPaid;
+  String PaidTo;
+  String RentDue;
+
 
   List <Conversation> conversations;
   List<Review> reviews;
@@ -100,6 +107,19 @@ class User extends Contact {
     List<String> converstionIDs=List<String>.from(snapshot['conversationIDs'])??[];
     List<String> myPostingIDs=List<String>.from(snapshot['myPostingIDs'])??[];
     List<String> savedPostingIDs=List<String>.from(snapshot['savedPostingIDs'])??[];
+  }
+  Future<void> getPaymentinfoFirestore()async {
+    DocumentSnapshot snapshot = await Firestore.instance.collection('users')
+        .document(this.id)
+        .get();
+    this.snapshot=snapshot;
+    this.Rent = snapshot['Rent']??"";
+    this.DueDays = snapshot['DueDays']??"";
+    this.DueAmount=snapshot['DueAmount']??"";
+    this.LastPaid=snapshot['LastPaid']??"";
+    this.PaidTo=snapshot['PaidTo']??"";
+    this.RentDue=snapshot['RentDue']??"";
+
   }
 
   
