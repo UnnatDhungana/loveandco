@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating/flutter_rating.dart';
+import 'package:rental_application/Models/messagingObjects.dart';
 import 'package:rental_application/Screens/Profile.dart';
 import 'package:rental_application/Models/Appconstants.dart';
 
@@ -77,13 +78,22 @@ class _ReviewListTileState extends State<ReviewListTile>{
 
 class ConversationListtile extends StatefulWidget{
 
-  ConversationListtile({Key key}): super(key:key);
+  final Conversation conversation;
+
+  ConversationListtile({ this.conversation ,Key key}): super(key:key);
 
   @override
   _ConversationlistTileState createState() => _ConversationlistTileState();
 
 }
 class _ConversationlistTileState extends State<ConversationListtile>{
+  Conversation _conversation;
+
+  @override
+  void initState() {
+  this. _conversation = widget.conversation;
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -95,25 +105,25 @@ class _ConversationlistTileState extends State<ConversationListtile>{
           );
         },
         child: CircleAvatar(
-          backgroundImage: AssetImage('assets/image/2042468.jpg'),
+          backgroundImage: _conversation.otherContact.displayImage,
           radius: MediaQuery.of(context).size.width/14.0,
         ),
       ),
       title: Text(
-          'Aruna',
+          _conversation.otherContact.getFullName(),
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 22.5,
           )
       ),
-      subtitle: Text(
-          'Hi!!',
+      subtitle: AutoSizeText(
+        _conversation.getLastMessageText() ,
           style: TextStyle(
             fontSize: 20,
           )
       ),
       trailing: Text(
-        'july2',
+        _conversation.getLastMessageDateTime(),
         style: TextStyle(
           fontSize: 20,
         ),

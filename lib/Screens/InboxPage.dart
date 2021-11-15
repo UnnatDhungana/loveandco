@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rental_application/Models/Appconstants.dart';
+import 'package:rental_application/Models/messagingObjects.dart';
 import 'package:rental_application/Screens/ConversationPage.dart';
 import 'package:rental_application/Views/TextWidget.dart';
 import 'package:rental_application/Views/listwidget.dart';
@@ -21,14 +22,16 @@ class _inboxPageState extends State<inboxPage> {
     return Padding(
       padding: const EdgeInsets.only(top: 15.0),
       child: ListView.builder(
-          itemCount: 1,
+          itemCount: AppConstants.currentUser.conversations.length,
           itemExtent: MediaQuery
               .of(context)
               .size
               .height / 7,
           itemBuilder: (context, index) {
+            Conversation currentConversation = AppConstants.currentUser.conversations[index];
+
             return InkResponse(
-              child: ConversationListtile(),
+              child: ConversationListtile(conversation: currentConversation,),
               onTap: () {
                 Navigator.pushNamed(
                     context,

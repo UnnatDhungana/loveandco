@@ -30,136 +30,141 @@ class _paymentPageState extends State<paymentPage> {
 
   @override
   void initState() {
-
-    _RentController = TextEditingController(text: AppConstants.currentUser.Rent);
-    _DueDaysController = TextEditingController( text: AppConstants.currentUser.DueDays);
-    _DueAmountController = TextEditingController(text: AppConstants.currentUser.DueAmount);
-    _LastPaidController = TextEditingController(text: AppConstants.currentUser.LastPaid);
-    _PaidToController= TextEditingController( text: AppConstants.currentUser.PaidTo);
-    _RentDueController = TextEditingController( text: AppConstants.currentUser.RentDue);
+    _RentController =
+        TextEditingController(text: AppConstants.currentUser.Rent);
+    _DueDaysController =
+        TextEditingController(text: AppConstants.currentUser.DueDays);
+    _DueAmountController =
+        TextEditingController(text: AppConstants.currentUser.DueAmount);
+    _LastPaidController =
+        TextEditingController(text: AppConstants.currentUser.LastPaid);
+    _PaidToController =
+        TextEditingController(text: AppConstants.currentUser.PaidTo);
+    _RentDueController =
+        TextEditingController(text: AppConstants.currentUser.RentDue);
 
     super.initState();
-
   }
 
 
   @override
   Widget build(BuildContext context) {
     return
+      Container(
+          child:  SingleChildScrollView(
 
-       Container(
-              child:  SingleChildScrollView(
-
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(25, 25,25, 0),
-          child: Column(
-          children: <Widget>[
-            Form(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(25, 25,25, 0),
               child: Column(
                 children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(top: 2.0),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                          labelText: 'Rent Due'
-                      ),
-                      style: TextStyle(
-                        fontSize: 25.0,
-                      ),
-                      maxLines: 2,
-                      enabled: false,
-                      controller: _RentController,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 25.0),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                          labelText: 'Due Days'
-                      ),
-                      style: TextStyle(
-                        fontSize: 25.0,
-                      ),
-                      maxLines: 2,
-                      enabled: false,
-                      controller: _DueDaysController,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 25.0),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                          labelText: 'Due Amount'
-                      ),
-                      style: TextStyle(
-                        fontSize: 25.0,
-                      ),
-                      maxLines: 2,
-                      enabled: false,
-                      controller: _DueAmountController,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 25.0),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                          labelText: 'Last Paid'
-                      ),
-                      style: TextStyle(
-                        fontSize: 25.0,
-                      ),
-                      maxLines: 2,
-                      enabled: false,
-                      controller: _LastPaidController,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 25.0),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                          labelText: 'Paid to'
-                      ),
-                      style: TextStyle(
-                        fontSize: 25.0,
-                      ),
-                      enabled: false,
-                      controller: _PaidToController,
+                  Container(
+                    child: Column(
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(top: 2.0),
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                                labelText: 'Rent Due'
+                            ),
+                            style: TextStyle(
+                              fontSize: 25.0,
+                            ),
+                            maxLines: 2,
+                            enabled: false,
+                            controller: _RentController,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 25.0),
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                                labelText: 'Due Days'
+                            ),
+                            style: TextStyle(
+                              fontSize: 25.0,
+                            ),
+                            maxLines: 2,
+                            enabled: false,
+                            controller: _DueDaysController,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 25.0),
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                                labelText: 'Due Amount'
+                            ),
+                            style: TextStyle(
+                              fontSize: 25.0,
+                            ),
+                            maxLines: 2,
+                            enabled: false,
+                            controller: _DueAmountController,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 25.0),
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                                labelText: 'Last Paid'
+                            ),
+                            style: TextStyle(
+                              fontSize: 25.0,
+                            ),
+                            maxLines: 2,
+                            enabled: false,
+                            controller: _LastPaidController,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 25.0),
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                                labelText: 'Paid to'
+                            ),
+                            style: TextStyle(
+                              fontSize: 25.0,
+                            ),
+                            enabled: false,
+                            controller: _PaidToController,
 
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 25.0),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                          labelText: 'Rent Due'
-                      ),
-                      style: TextStyle(
-                        fontSize: 25.0,
-                      ),
-                      enabled: false,
-                      controller: _RentDueController,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 25.0),
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                                labelText: 'Rent Due'
+                            ),
+                            style: TextStyle(
+                              fontSize: 25.0,
+                            ),
+                            enabled: false,
+                            controller: _RentDueController,
 
+                          ),
+                        ),
+
+                      ],
                     ),
                   ),
+
+
+
 
                 ],
               ),
             ),
+          )
+      );
 
-
-
-
-          ],
-        ),
-      ),
-              )
-    );
 
 
 
 
 
   }
+
 
 }
 class PaymentPageListViewItem extends StatelessWidget{

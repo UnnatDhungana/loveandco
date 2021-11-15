@@ -64,6 +64,8 @@ class Message{
     String _getTime(){
       String time = dateTime.toIso8601String().substring(11,16);
       String hours = time.substring(0,2);
+      int hoursInt = int.parse(hours);
+      if(hoursInt>12){hoursInt -=12;}
       String minutes = time.substring(2);
       return hours+":"+minutes;
     }
